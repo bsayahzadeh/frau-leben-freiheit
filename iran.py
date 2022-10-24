@@ -1,9 +1,7 @@
 from xml.sax.handler import all_features
-import csv
 import streamlit as st
 import pandas as pd
 import numpy as np
-#from streamlit_chat import message
 
 df = pd.read_csv("/Users/betisa/Desktop/iran/flf/data/deputies.csv", sep=";")
 
@@ -14,7 +12,6 @@ st.write("Seit Wochen weht im Iran ein Wind der Veränderungen. Und seit Wochen 
 @st.cache(suppress_st_warning= True, allow_output_mutation=True)
 def get_info(plz):
     info = df[["Abgeordnete", "E-Mail", "Partei", "Wahlkreis"]].loc[df.PLZ.str.contains(plz)]
-    #info = df[["Abgeordnete", "E-Mail", "Partei", "Wahlkreis"]].loc[df.PLZ.str.contains(plz)].sort_values(by=["Wahlkreis"])
     info = info.set_index("Abgeordnete").sort_values(by=["Wahlkreis"])
     return info
 
