@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 #from streamlit_chat import message
 
-df = pd.read_csv("/Users/betisa/Desktop/iran/deputies.csv", sep=";")
+df = pd.read_csv("/Users/betisa/Desktop/iran/flf/data/deputies.csv", sep=";")
 
 st.header(":mailbox: Schreibe deinen Abgeordneten")
 
